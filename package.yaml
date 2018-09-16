@@ -1,0 +1,35 @@
+name:                slotmap
+version:             0.1.0.0
+github:              "harporoeder/slotmap"
+license:             BSD3
+author:              "Harpo Roeder"
+maintainer:          "roederharpo@protonmail.ch"
+copyright:           "2018 Harpo Roeder"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Pure Haskell slotmap implementation over ST or IO.
+category:            Data
+description:         Please see the README on GitHub at <https://github.com/harporoeder/slotmap#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- vector
+- primitive
+
+library:
+  source-dirs: src
+
+tests:
+  slotmap-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - slotmap
+    - hspec
